@@ -9,23 +9,22 @@ import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
 
-
 class App extends React.Component {
   render() {
     return (
       <div>
         <p>TrybeTunes</p>
         <Switch>
-        <Route exact path='/' render={(props) => <Login {...props} /> } />
-        <Route exact path='/search' component={ Search } />
-        <Route exact path='/album/:id' component={ Album } />
-        <Route exact path='/favorites' component={ Favorites } />
-        <Route exact path='/profile' component={ Profile } />
-        <Route exact path='/profile/edit' component={ ProfileEdit } />
-        <Route path='/' component={ NotFound } />
+          <Route exact path="/" render={ (props) => <Login { ...props } /> } />
+          <Route exact path="/search" component={ Search } />
+          <Route exact path="/album/:id" component={ Album } />
+          <Route exact path="/favorites" component={ Favorites } />
+          <Route exact path="/profile" component={ Profile } />
+          <Route exact path="/profile/edit" component={ ProfileEdit } />
+          <Route path="/" component={ NotFound } />
         </Switch>
-        </div>
-        )
+      </div>
+    );
   }
 }
 

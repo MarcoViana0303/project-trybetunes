@@ -1,15 +1,14 @@
-import React from "react";
-import Header from "../components/Header";
+import React from 'react';
+import Header from '../components/Header';
 
 export default class Profile extends React.Component {
-    render() {
-        return (
-            <div data-testid="page-profile">
-                <Header />
+  render() {
+    return (
+      <div data-testid="page-profile">
+        <Header />
 
+      </div>
 
-            </div>
-
-        )
-    }
+    );
+  }
 }
