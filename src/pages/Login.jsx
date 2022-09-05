@@ -24,7 +24,6 @@ export default class Login extends React.Component {
   };
 
   onInput = ({ target }) => {
-    console.log(target);
     const { name } = target;
     const valor = target.value;
     this.setState({
