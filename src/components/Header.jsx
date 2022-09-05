@@ -37,17 +37,17 @@ export default class Header extends React.Component {
         const { loading, name, aparecerNome } = this.state;
         return (
             <header data-testid="header-component">
-                <div data-testid="link-to-search">
-                    <Link to="/search">Search</Link>
+                <div>
+                    <Link data-testid="link-to-search" to="/search">Search</Link>
 
                 </div>
 
-                <div data-testid="link-to-favorites">
-                    <Link to="/favorites">Favorites</Link>
+                <div >
+                    <Link data-testid="link-to-favorites" to="/favorites">Favorites</Link>
 
                 </div>
-                <div data-testid="link-to-profile">
-                    <Link to="/profile">Profile</Link>
+                <div >
+                    <Link data-testid="link-to-profile" to="/profile">Profile</Link>
                 </div>
                 <div data-testid="header-user-name">
                 
