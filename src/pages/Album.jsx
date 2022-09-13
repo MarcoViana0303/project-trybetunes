@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 // eslint-disable-next-line import/no-named-as-default
@@ -24,7 +25,6 @@ export default class Album extends React.Component {
 
   render() {
     const { idAlbum, loading } = this.state;
-    console.log(idAlbum);
     return (
       <div data-testid="page-album">
         <Header />
@@ -53,18 +53,27 @@ export default class Album extends React.Component {
           )}
 
           {
-            idAlbum.map((elemento, index) => (
-              <div key={ index }>
-                <MusicCard
-                  idAlbum={ idAlbum }
-                  idMusic={ elemento.trackId }
-                  url={ elemento.previewUrl }
-                  nameMusic={ elemento.trackName }
-                />
+            idAlbum.length > 0
+             && (
 
-              </div>
+               idAlbum.map((elemento, index) => (
+                 index > 0 && (
 
-            ))
+                   <div key={ index }>
+                     <MusicCard
+                       idAlbum={ idAlbum }
+                       idMusic={ elemento.trackId }
+                       url={ elemento.previewUrl }
+                       nameMusic={ elemento.trackName }
+                       index={ index }
+                       track={ elemento }
+                     />
+
+                   </div>
+                 )
+
+               ))
+             )
 
           }
 
