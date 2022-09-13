@@ -8,6 +8,20 @@ class MusicCard extends Component {
     musicaFavorita: [],
   };
 
+  componentDidMount() {
+    this.setState({
+      loading: true,
+    }, async () => {
+      const musicaPreferidas = await getFavoriteSongs();
+      if (musicaPreferidas) {
+        this.setState({
+          musicaFavorita: musicaPreferidas,
+          loading: false,
+        });
+      }
+    });
+  }
+
   musicFavorite = () => {
     const { track } = this.props;
     this.setState({
