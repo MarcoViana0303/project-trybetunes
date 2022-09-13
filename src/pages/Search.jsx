@@ -51,25 +51,29 @@ export default class Search extends React.Component {
         <Header />
 
         {loading ? <p>Carregando...</p>
-          : <form>
+          : (
+            <form>
 
-            <input
-              type="text"
-              data-testid="search-artist-input"
-              name="bandaArt"
-              onChange={ this.onInput }
-              value={ bandaArt }
-              placeholder="Artista/Banda"
-            />
-            <button
-              type="button"
-              data-testid="search-artist-button"
-              disabled={ disable }
-              onClick={ () => { this.ativarBotao(bandaArt); } }
-            >
-              Pesquisar
-            </button>
-          </form>}
+              <input
+                type="text"
+                data-testid="search-artist-input"
+                name="bandaArt"
+                onChange={ this.onInput }
+                value={ bandaArt }
+                placeholder="Artista/Banda"
+              />
+              <button
+                type="button"
+                data-testid="search-artist-button"
+                disabled={ disable }
+                onClick={ () => { this.ativarBotao(bandaArt); } }
+              >
+                Pesquisar
+              </button>
+
+            </form>
+          )}
+
         {cantor.length > 0 && <h1>{`Resultado de álbuns de: ${bandaArtInput}`}</h1>}
         {cantor.length === 0 && 'Nenhum álbum foi encontrado'}
 
