@@ -77,21 +77,23 @@ export default class Search extends React.Component {
         {cantor.length > 0 && <h1>{`Resultado de álbuns de: ${bandaArtInput}`}</h1>}
         {cantor.length === 0 && 'Nenhum álbum foi encontrado'}
 
-        {cantor.map((elemento) => (
-          <div key={ elemento.collectionId }>
+        <div className="div-album">
+          {cantor.map((elemento) => (
+            <div key={ elemento.collectionId } className="card">
 
-            <img src={ elemento.artworkUrl100 } alt={ elemento.artistId } />
-            <p>{elemento.artistName}</p>
-            <p>{elemento.collectionName}</p>
-            <Link
-              to={ `/album/${elemento.collectionId}` }
-              data-testid={ `link-to-album-${elemento.collectionId}` }
-            >
-              Link
-            </Link>
-          </div>
+              <img src={ elemento.artworkUrl100 } alt={ elemento.artistId } />
+              <p>{elemento.artistName}</p>
+              <p>{elemento.collectionName}</p>
+              <Link
+                to={ `/album/${elemento.collectionId}` }
+                data-testid={ `link-to-album-${elemento.collectionId}` }
+              >
+                Link
+              </Link>
+            </div>
 
-        ))}
+          ))}
+        </div>
 
       </div>
 

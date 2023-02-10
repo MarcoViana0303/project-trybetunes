@@ -38,6 +38,7 @@ export default class Album extends React.Component {
               <div>
                 <div
                   data-testid="artist-name"
+
                 >
                   {idAlbum[0].artistName}
                 </div>

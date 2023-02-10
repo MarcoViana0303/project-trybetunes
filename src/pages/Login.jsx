@@ -48,33 +48,41 @@ export default class Login extends React.Component {
   render() {
     const { btnLogin, textoLogin, loading, redirect } = this.state;
     return (
-      <div data-testid="page-login">
 
-        <input
-          type="text"
-          name="textoLogin"
-          value={ textoLogin }
-          data-testid="login-name-input"
-          placeholder="Nome"
-          onChange={ this.onInput }
-        />
+      <div className="login-box">
 
-        {
-          loading && <p>Carregando...</p>
-        }
+        <form className="form">
+          <input
+            id="texto-login"
+            type="text"
+            name="textoLogin"
+            value={ textoLogin }
+            data-testid="login-name-input"
+            className="input"
+            placeholder="Nome"
+            onChange={ this.onInput }
+          />
+        </form>
+        <div data-testid="page-login" className="user-box">
 
-        <button
-          type="button"
-          data-testid="login-submit-button"
-          disabled={ btnLogin }
-          onClick={ this.createUsuario }
-        >
-          Entrar
-        </button>
+          {
+            loading && <p className="loading-p">Carregando...</p>
+          }
 
-        {
-          redirect && <Redirect to="/search" />
-        }
+          <button
+            type="button"
+            data-testid="login-submit-button"
+            disabled={ btnLogin }
+            onClick={ this.createUsuario }
+          >
+            Entrar
+          </button>
+
+          {
+            redirect && <Redirect to="/search" />
+          }
+
+        </div>
 
       </div>
 

@@ -12,8 +12,11 @@ import NotFound from './pages/NotFound';
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <p>TrybeTunes</p>
+      <div className="div-style">
+        <p>
+          {' '}
+          <h1>TrybeTunes</h1>
+        </p>
         <Switch>
           <Route exact path="/" render={ (props) => <Login { ...props } /> } />
           <Route exact path="/search" component={ Search } />
