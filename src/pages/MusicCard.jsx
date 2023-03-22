@@ -54,7 +54,7 @@ class MusicCard extends Component {
                 <code>audio</code>
                 .
               </audio>
-              <p id='name-music'>{nameMusic}</p>
+              <p id="name-music">{nameMusic}</p>
             </div>
           )}
           <div>
@@ -69,7 +69,7 @@ class MusicCard extends Component {
                   elemento.trackId === track.trackId
                 )) }
                 onClick={ this.musicFavorite }
-                className= 'check-music'
+                className="check-music"
               />
 
             </label>

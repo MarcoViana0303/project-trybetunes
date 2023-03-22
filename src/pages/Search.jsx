@@ -61,7 +61,7 @@ export default class Search extends React.Component {
                 onChange={ this.onInput }
                 value={ bandaArt }
                 placeholder="Artista/Banda"
-                id='input-search'
+                id="input-search"
               />
               <button
                 type="button"
