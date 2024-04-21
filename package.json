@@ -18,6 +18,7 @@
   },
   "homepage": "https://marcoviana0303.github.io/project-trybetunes",
   "scripts": {
+    "publicar": "npm run build && ./node_modules/.bin/gh-pages -d build",
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
